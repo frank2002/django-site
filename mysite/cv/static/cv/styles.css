@@ -1,0 +1,92 @@
+/* cv/static/cv/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    color: #333;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+ul.education-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.education-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+/* styles.css */
+
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+    border-top: 1px solid #000;
+}
+
+.experience-list li {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.experience-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.experience-dates {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.experience-details {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.experience-details em {
+    font-style: italic;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.experience-location {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.experience-tasks {
+    list-style-type: disc;
+    margin-top: 5px;
+    margin-left: 20px;
+    color: #333;
+}
+
+.experience-tasks li {
+    margin-bottom: 5px;
+}

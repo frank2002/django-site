@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+    <link rel="stylesheet" href="{% static 'cv/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Junyuan Wang</h1>
+        <p>jw9178@nyu.edu</p>
+    </header>
+
+    <section>
+        <h2>Education</h2>
+        <hr>
+        <ul class="education-list">
+
+            {% for education in education_list %}
+                <li>
+                    <div>
+                        <strong>{{ education.institution }}, {{ education.localtion }}</strong><br>
+                        <span class="degree">{{ education.degree }}</span>
+                    </div>
+                    <div>
+                        <span>{{ education.start_date|date:"F Y" }} – {% if education.end_date %}{{ education.end_date|date:"F Y" }}{% else %}Present{% endif %}</span>
+                    </div>
+                </li>
+                <hr>
+
+
+
+            {% empty %}
+                <li>No education information available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+    
+
+    <section>
+        <h2>Experience</h2>
+        <ul class="experience-list">
+            {% for experience in experience_list %}
+                <li>
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <strong>{{ experience.company }}</strong>, {{ experience.job_title }}
+                        </div>
+                        <div class="experience-dates">
+                            {{ experience.start_date|date:"M Y" }} – {% if experience.end_date %}{{ experience.end_date|date:"M Y" }}{% else %}Present{% endif %}
+                        </div>
+                    </div>
+                    <div class="experience-details">
+                        <em>{{ experience.description }}</em>
+                        {% if experience.localtion %}
+                            <div class="experience-location">{{ experience.localtion }}</div>
+                        {% endif %}
+
+                    </div>
+                </li>
+            {% empty %}
+                <li>No experience information available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <hr>
+        <ul>
+            {% for skill in skills_list %}
+                <li>{{ skill.name }} - {{ skill.proficiency }}</li>
+            {% empty %}
+                <li>No skills information available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Language</h2>
+        <hr>
+        <ul>
+            {% for language in language_list %}
+                <li>{{ language.name }} - {{ language.proficiency }}</li>
+            {% empty %}
+                <li>No Language information available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+</body>
+</html>
